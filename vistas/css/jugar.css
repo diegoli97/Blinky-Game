@@ -52,15 +52,49 @@ h1 {
   align-items: center;
 }
 
-.botonInteractuable {
-  padding: 10px 20px;
+/*tipos de botones durante el juego:
+- neutro para empezar
+- malo para el botón que no haya que pulsar
+- bueno para el botón que sí que haya que pulsar*/
+
+.neutra {
+  margin-left: 10px;
+  margin-right: 10px;
   font-size: 50px;
   font-weight: bolder;
-  background-color: #b03737;
+  background-color: #f7f5f5;
   border: none;
   border-radius: 10px;
   text-align: center;
-  width: 40vw;
+  width: 20vw;
+  height: 30vh;
+  cursor: pointer;
+}
+
+.bueno {
+  margin-left: 10px;
+  margin-right: 10px;
+  font-size: 50px;
+  font-weight: bolder;
+  background-color: #3389b3;
+  border: none;
+  border-radius: 10px;
+  text-align: center;
+  width: 20vw;
+  height: 30vh;
+  cursor: pointer;
+}
+
+.malo {
+  margin-left: 10px;
+  margin-right: 10px;
+  font-size: 50px;
+  font-weight: bolder;
+  background-color: #9e2a2a;
+  border: none;
+  border-radius: 10px;
+  text-align: center;
+  width: 20vw;
   height: 30vh;
   cursor: pointer;
 }

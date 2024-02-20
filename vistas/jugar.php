@@ -13,14 +13,15 @@
     <body>
 
         <div class="divTitulo"> 
-            <h1> 01:22</h1>
+            <h1 id="timer"> 01:22</h1>
         </div>
 
         <div class="divBoton" id="divBotonJugar">
             <button class="botonPlay" onclick="ocultarBotonJuego()"><i class="fas fa-play play-icon"></i></button>
         </div>
         <div class="zonaJuego" id="divZonaJuego">
-            <button class="botonInteractuable"></button>
+            <button class="neutra" id="boton1"></button>
+            <button class="neutra" id="boton2"></button>
         </div>    
 
         <div class="divBotones">

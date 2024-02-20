@@ -1,0 +1,136 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #272424;
+}
+
+a {
+  text-decoration: none;
+}
+
+.divBoton {
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.botonJugar {
+  padding: 10px 20px;
+  font-size: 50px;
+  font-weight: bolder;
+  background-color: #d1d13f;
+  color: #131212;
+  border: none;
+  border-radius: 10px;
+  text-align: center;
+  width: 270px;
+  height: 120px;
+  cursor: pointer;
+}
+
+.botonJugar:hover {
+  background-color: #0e0d0d;
+  color: #d1d13f;
+}
+
+/* Código extraido de W3Schools, para el menú de navegación */
+
+.topnav {
+  overflow: hidden;
+  display: flex;
+  align-items: stretch;
+  background-color: #272424;
+}
+
+.topnav > div {
+  margin: 30px;
+}
+
+.botonRanking,
+.botonVerUsuarios {
+  color: white;
+  background-color: rgb(60, 165, 90);
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 20px;
+  border-radius: 10px;
+  border-style: solid;
+  border-width: 5px;
+  border-color: #15561f;
+  cursor: pointer;
+}
+
+.botonRanking:hover,
+.botonVerUsuarios:hover {
+  color: rgb(60, 165, 90);
+  background-color: white;
+}
+
+/*
+Para el buscador de usuarios
+*/
+
+.topnav input[type="text"] {
+  padding: 6px;
+  margin-top: 8px;
+  font-size: 17px;
+  border: none;
+}
+
+.topnav .search-container button {
+  padding: 6px 10px;
+  margin-top: 8px;
+  margin-right: 16px;
+  background: #ddd;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+}
+
+.topnav .search-container button:hover {
+  background: #ccc;
+}
+
+/*Selector de dificultad */
+
+.divDificultad {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50px;
+  z-index: index 10;
+  background-color: #0e0d0d;
+  width: 500px;
+  max-width: 50%;
+  height: 500px;
+  max-height: 30%;
+  display: none;
+  padding: 20px;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.botonFacil,
+.botonNormal {
+  cursor: pointer;
+  color: white;
+  background-color: rgb(60, 165, 90);
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 20px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.botonFacil:hover,
+.botonNormal:hover {
+  background-color: rgb(37, 106, 57);
+}

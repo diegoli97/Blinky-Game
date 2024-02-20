@@ -1,0 +1,97 @@
+body {
+  font-family: Tahoma, sans-serif;
+  background-color: #272424;
+  font-weight: bold;
+}
+
+/*Estilo para el titulo*/
+
+.divTitulo {
+  margin-top: 8vh;
+  margin-left: auto;
+  margin-right: auto;
+  width: 30%;
+  border-radius: 4px;
+  background-color: #ddd;
+  padding: 4px;
+}
+
+h1 {
+  text-align: center;
+  font-size: 36px;
+  color: #38923e;
+}
+
+/*Botón play*/
+.divBoton {
+  height: 45vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.botonPlay {
+  padding: 10px 20px;
+  font-size: 50px;
+  font-weight: bolder;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  text-align: center;
+  width: 40vw;
+  height: 30vh;
+  cursor: pointer;
+}
+
+/* Zona juego*/
+.zonaJuego {
+  height: 45vh;
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.botonInteractuable {
+  padding: 10px 20px;
+  font-size: 50px;
+  font-weight: bolder;
+  background-color: #b03737;
+  border: none;
+  border-radius: 10px;
+  text-align: center;
+  width: 40vw;
+  height: 30vh;
+  cursor: pointer;
+}
+
+/* Botón de vuelta a inicio (mismo que buscarUsuarios) y repetir*/
+.divBotones {
+  display: flex;
+  margin-left: 50%;
+  transform: translate(-50%, 0%);
+  justify-content: space-evenly;
+  max-width: 20%;
+}
+
+.botonesFinal {
+  background-color: #4caf50;
+  border: none;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 22px;
+  margin-top: 8vh;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.botonesFinal:hover,
+.botonPlay:hover {
+  background-color: #1f6723;
+}
+
+.puertaSalida {
+  margin-right: 5px;
+}

@@ -1,0 +1,109 @@
+body {
+  font-family: Tahoma, sans-serif;
+  background-color: #272424;
+  font-weight: bold;
+}
+
+/* Estilo para la tabla */
+.divTabla {
+  margin-top: 20vh;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th,
+td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+tr:nth-child(odd) {
+  color: #f2f2f2;
+  background-color: #171515;
+}
+
+th {
+  background-color: #4caf50;
+  color: white;
+}
+
+/* Botones de la tabla */
+.follow,
+.unfollow {
+  background-color: #4caf50;
+  border: none;
+  color: white;
+  padding: 8px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  margin: 10px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.follow:hover,
+.unfollow:hover {
+  background-color: #1f6723;
+}
+
+/*Barra de busqueda, sacado de W3Schools*/
+
+.search-container {
+  margin-top: 5vh;
+  margin-left: 40vw;
+}
+.search-container input[type="text"] {
+  padding: 6px;
+  margin-top: 8px;
+  font-size: 17px;
+  border: none;
+}
+
+.search-container button {
+  padding: 6px 10px;
+  background: #ddd;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+}
+
+.search-container button:hover {
+  background: #ccc;
+}
+
+/* Botón de vuelta a inicio */
+.botonSalida {
+  background-color: #4caf50;
+  border: none;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 22px;
+  margin-top: 20vh;
+  margin-left: 46vw;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.botonSalida:hover {
+  background-color: #1f6723;
+}
+
+.puertaSalida {
+  margin-right: 5px;
+}

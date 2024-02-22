@@ -3,7 +3,7 @@ Buscar Usuarios, Ver Ranking y Borrar Usuario-->
 
 <?php
 
-if (isset($_GET['submit'])){
+if (isset($_GET['buscar'])){
 
     $nombreBuscado = $_GET['buscarUsuario'];
 
@@ -38,21 +38,21 @@ if (isset($_GET['submit'])){
             <div class="search-container" style="flex-grow: 8">
                 <form action="index.php" method="get">
                     <input type="text" placeholder="Buscar Usuario" name="buscarUsuario">
-                    <button type="submit" name='submit'><i class="fa fa-search"></i></button>
+                    <button type="submit" name='buscar'><i class="fa fa-search"></i></button>
                 </form>
             </div>
 
         </div>
 
 
-        <div class="divBoton" id="botonJugar" onclick="cambiarDisplay()">
-                <button class="botonJugar"> Jugar </button>
+        <div class="divBoton" id="botonJugar">
+                <button class="botonJugar" onclick="cambiarDisplay()"> Jugar </button>
         </div>
 
         <!-- Div para la selección de dificultad -->
         <div class="divDificultad" id="selectorDificultad">
-        <a href="/vistas/jugar.php"><button class="botonFacil">Fácil </button></a>
-        <a href="/vistas/jugar.php"><button class="botonNormal">Normal</button></a>
+        <a href="/vistas/jugarFacil.php"><button class="botonFacil">Fácil </button></a>
+        <a href="/vistas/jugarFacil.php"><button class="botonNormal">Normal</button></a>
         <button class="botonNormal" onclick="displayNone()">Volver</button>
         </div>
 

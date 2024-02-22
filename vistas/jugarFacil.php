@@ -1,3 +1,16 @@
+<?php
+
+if (isset($_POST['submitOculto'])){
+
+    $puntuacionMilisegundos = $_POST['puntuacionOculta'];
+    $puntuacionImpresa = $_POST['puntuacionOcultaImpresa'];
+
+}else{
+    $puntuacionImpresa = "00:00.000";
+}
+
+
+?>
 
 <!DOCTYPE html>
 <html lang="es">
@@ -9,25 +22,33 @@
         <!-- Link para los iconos de font awesome -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
         <!-- Link para el archivo de Javascript, defer para cargarlo después de que cargue la página-->
-        <script src="js/jugar.js" defer></script>
+        <script src="js/jugarFacil.js" defer></script>
     </head>
     <body>
 
         <div class="divTitulo"> 
-            <h1 id="timer"> 00:00.000</h1>
+            <h1 id="timer"> <?php echo "$puntuacionImpresa" ?></h1>
         </div>
 
         <div class="divBoton" id="divBotonJugar">
             <button class="botonPlay" onclick="iniciarJuego()"><i class="fas fa-play play-icon"></i></button>
         </div>
         <div class="zonaJuego" id="divZonaJuego">
+            <button class="neutra" id="boton0" onclick="botonPresionado(this.id)"></button>
             <button class="neutra" id="boton1" onclick="botonPresionado(this.id)"></button>
-            <button class="neutra" id="boton2" onclick="botonPresionado(this.id)"></button>
         </div>    
 
         <div class="divBotones">
             <a href="/index.php"><button class="botonesFinal"><i class="fas fa-door-open puertaSalida"></i>Inicio</button></a>
             <button class="botonesFinal" onclick="window.location.reload()"><i class="fas fa-redo"></i></button>
+        </div>
+        <!-- formulario oculto al que javascript mandará la puntuación para que php pueda recogerla -->
+        <div id="formularioOculto">
+            <form action="jugarFacil.php" method="post">
+                <input type="hidden" name="puntuacionOculta" id="puntuacionOculta" value=""></input>
+                <input type="hidden" name="puntuacionOcultaImpresa" id="puntuacionOcultaImpresa" value=""></input>
+                <button type="submit" name="submitOculto" id="submitOculto">Enviar puntuación</input>
+            </form>
         </div>
     </body>
 </html>

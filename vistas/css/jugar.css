@@ -116,7 +116,7 @@ h1 {
   text-align: center;
   text-decoration: none;
   font-size: 22px;
-  margin-top: 8vh;
+  margin-top: 4vh;
   border-radius: 4px;
   cursor: pointer;
 }
@@ -128,4 +128,26 @@ h1 {
 
 .puertaSalida {
   margin-right: 5px;
+}
+
+/*Para que el formulario oculto no se vea*/
+#formularioOculto {
+  display: none;
+  margin-left: 50%;
+  transform: translate(-50%, 0%);
+  justify-content: space-evenly;
+  max-width: 20%;
+}
+
+#submitOculto {
+  background-color: #4caf50;
+  border: none;
+  color: white;
+  padding: 15px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 18px;
+  margin-top: 6vh;
+  border-radius: 4px;
+  cursor: pointer;
 }

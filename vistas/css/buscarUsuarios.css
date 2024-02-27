@@ -6,10 +6,10 @@ body {
 
 /* Estilo para la tabla */
 .divTabla {
-  margin-top: 20vh;
+  margin-top: 10vh;
   margin-left: auto;
   margin-right: auto;
-  width: 80%;
+  width: 70%;
 }
 
 table {
@@ -20,7 +20,7 @@ table {
 th,
 td {
   padding: 8px;
-  text-align: left;
+  text-align: center;
   border-bottom: 1px solid #ddd;
 }
 
@@ -94,7 +94,8 @@ th {
   text-decoration: none;
   display: inline-block;
   font-size: 22px;
-  margin-top: 20vh;
+  margin-top: 10vh;
+  margin-bottom: 10vh;
   margin-left: 46vw;
   border-radius: 4px;
   cursor: pointer;

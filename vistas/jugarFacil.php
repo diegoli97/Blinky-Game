@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 
 if (isset($_POST['submitOculto'])){
 
@@ -8,6 +10,7 @@ if (isset($_POST['submitOculto'])){
 }else{
     $puntuacionImpresa = "00:00.000";
 }
+
 
 
 ?>

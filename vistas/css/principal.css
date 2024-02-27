@@ -24,8 +24,8 @@ a {
   padding: 10px 20px;
   font-size: 50px;
   font-weight: bolder;
-  background-color: #d1d13f;
-  color: #131212;
+  background-color: #4caf50;
+  color: white;
   border: none;
   border-radius: 10px;
   text-align: center;
@@ -35,8 +35,7 @@ a {
 }
 
 .botonJugar:hover {
-  background-color: #0e0d0d;
-  color: #d1d13f;
+  background-color: #1f6723;
 }
 
 /* Código extraido de W3Schools, para el menú de navegación */
@@ -52,8 +51,7 @@ a {
   margin: 30px;
 }
 
-.botonRanking,
-.botonVerUsuarios {
+.botonesMenu {
   color: white;
   background-color: rgb(60, 165, 90);
   text-align: center;
@@ -67,8 +65,7 @@ a {
   cursor: pointer;
 }
 
-.botonRanking:hover,
-.botonVerUsuarios:hover {
+.botonesMenu:hover {
   color: rgb(60, 165, 90);
   background-color: white;
 }

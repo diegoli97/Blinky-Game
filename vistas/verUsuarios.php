@@ -26,12 +26,12 @@
                 </thead>
                 <tbody>
                 <tr>
-                    <td>diegoli</td>
-                    <td>1:03</td>
+                    <td>diego2</td>
+                    <td>1100</td>
                 </tr>
                 <tr>
-                    <td>diegoli34</td>
-                    <td>1:24</td>
+                    <td>diego10</td>
+                    <td>1900</td>
                 </tr>
                 </tbody>
             </table>

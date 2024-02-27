@@ -1,10 +1,14 @@
+<?php
+require_once("../controladores/ControladorRanking.php");
+?>
+
 <!DOCTYPE html>
 <html lang="es">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Usuarios seguidos</title>
-        <link rel="stylesheet" href="css/ranking.css">
+        <link rel="stylesheet" href="../vistas/css/ranking.css">
         <!-- Link para los iconos de font awesome -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     </head>
@@ -26,56 +30,22 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr>
-                    <td>1.</td>
-                    <td>diegoli</td>
-                    <td>1:03</td>
-                </tr>
-                <tr>
-                    <td>2.</td>
-                    <td>diegoli34</td>
-                    <td>1:24</td>
-                </tr>
-                <tr>
-                    <td>3.</td>
-                    <td>-</td>
-                    <td>-</td>
-                </tr>
-                <tr>
-                    <td>4.</td>
-                    <td>-</td>
-                    <td>-</td>
-                </tr>
-                <tr>
-                    <td>5.</td>
-                    <td>-</td>
-                    <td>-</td>
-                </tr>
-                <tr>
-                    <td>6.</td>
-                    <td>-</td>
-                    <td>-</td>
-                </tr>
-                <tr>
-                    <td>7.</td>
-                    <td>-</td>
-                    <td>-</td>
-                </tr>
-                <tr>
-                    <td>8.</td>
-                    <td>-</td>
-                    <td>-</td>
-                </tr>
-                <tr>
-                    <td>9.</td>
-                    <td>-</td>
-                    <td>-</td>
-                </tr>
-                <tr>
-                    <td>10.</td>
-                    <td>-</td>
-                    <td>-</td>
-                </tr>
+
+                <?php 
+
+                    $posicion=0;
+                    //Imprime los 10 usuarios conseguidos a través del query de ModeloRanking
+                    foreach($rankingUsuarios as $usuario){
+                        $posicion++;
+                        echo "<tr>";
+                        echo "<td>".$posicion.".</td>";
+                        echo "<td>".$usuario['NombreUsuario']."</td>";
+                        echo "<td>".$usuario['Puntuacion']."</td>";
+                        echo "</tr>";
+                    }
+
+                ?>
+
                 </tbody>
             </table>
 

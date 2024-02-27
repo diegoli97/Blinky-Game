@@ -1,13 +1,25 @@
 <?php 
 
-if (isset($_GET['submit'])){
+require_once("../modelos/ModeloBuscarUsuarios.php");
+
+if (isset($_GET['buscar'])){
 
     $nombreBuscado = $_GET['buscarUsuario'];
 
-    if($nombreBuscado == "diegoli"){
-        header('Location:buscarUsuarios.php');
-        exit();
-    }
+    $usuario = new ModeloBuscarUsuarios($nombreBuscado);
+
+    $usuariosEncontrados = $usuario->get_usuariosEncontrados();
+
+}
+
+if (isset($_GET['buscarDentro'])){
+
+    $nombreBuscado = $_GET['buscarUsuarioDentro'];
+    $usuario = new ModeloBuscarUsuarios($nombreBuscado);
+
+    $usuariosEncontrados = $usuario->get_usuariosEncontrados();
+
+
 }
 
 ?>
@@ -26,8 +38,8 @@ if (isset($_GET['submit'])){
        
             <div class="search-container">
                 <form action="buscarUsuarios.php" method="get">
-                    <input type="text" placeholder="Buscar Usuario" name="buscarUsuario">
-                    <button type="submit" name='submit'><i class="fa fa-search"></i></button>
+                    <input type="text" placeholder="<?= $nombreBuscado?>" name="buscarUsuarioDentro">
+                    <button type="submit" name='buscarDentro'><i class="fa fa-search"></i></button>
                 </form>
             </div>
     
@@ -41,14 +53,18 @@ if (isset($_GET['submit'])){
                 </tr>
                 </thead>
                 <tbody>
-                <tr>
-                    <td>diegoli</td>
-                    <td><button class="follow">Seguir</button><button class="unfollow">Dejar de seguir</button></td>
-                </tr>
-                <tr>
-                    <td>diegoli34</td>
-                    <td><button class="follow">Seguir</button><button class="unfollow">Dejar de seguir</button></td>
-                </tr>
+
+                <?php 
+
+                    //Imprime los usuarios encontrados
+                    foreach($usuariosEncontrados as $usuario){
+                        echo "<tr>";
+                        echo "<td>".$usuario['NombreUsuario']."</td>";
+                        echo "<td><button class='follow'>Seguir</button><button class='unfollow'>Dejar de seguir</button></td>";
+                        echo "</tr>";
+                    }
+
+                ?>
                 </tbody>
             </table>
         </div>

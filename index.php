@@ -3,14 +3,15 @@ Buscar Usuarios, Ver Ranking y Borrar Usuario-->
 
 <?php
 
-if (isset($_GET['buscar'])){
+$usuarioIniciado = "false";
 
-    $nombreBuscado = $_GET['buscarUsuario'];
+session_start();
 
-    if($nombreBuscado == "diegoli"){
-        header('Location:/vistas/buscarUsuarios.php');
-        exit();
-    }
+//Si el inicio de sesión ha sido exitoso el botón jugar ya no pedirá Login y además se mostrará un botón de cierre de sesión
+if(isset($_SESSION['sesionIniciada'])){
+    
+    $usuarioIniciado ="true";
+
 }
 
 
@@ -25,28 +26,30 @@ if (isset($_GET['buscar'])){
         <link rel="stylesheet" href="/vistas/css/principal.css">
         <!-- Link para el icono de font awesome -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-        <script src="vistas/js/principal.js"></script>
+        <script src="vistas/js/principal.js" defer></script>
     </head>
     <body>
         <div class="topnav">
 
 
-            <div style="flex-grow: 1"><a href="/vistas/ranking.php"><button class="botonRanking"> Ranking </button></a></div>
+            <div style="flex-grow: 1"><a href="/vistas/ranking.php"><button class="botonesMenu"> Ranking </button></a></div>
 
-            <div style="flex-grow: 1"><a href="/vistas/verUsuarios.php"><button class="botonVerUsuarios"> Ver Usuarios </button></a></div>
+            <div style="flex-grow: 1"><a href="/vistas/verUsuarios.php"><button class="botonesMenu"> Ver Usuarios </button></a></div>
 
             <div class="search-container" style="flex-grow: 8">
-                <form action="index.php" method="get">
+                <form action="vistas/buscarUsuarios.php" method="get">
                     <input type="text" placeholder="Buscar Usuario" name="buscarUsuario">
                     <button type="submit" name='buscar'><i class="fa fa-search"></i></button>
                 </form>
             </div>
 
+
         </div>
 
 
         <div class="divBoton" id="botonJugar">
-                <button class="botonJugar" onclick="cambiarDisplay()"> Jugar </button>
+            <!--Comprueba que el usuario esté iniciado: Si lo está ofrece las opciones para jugar, si no lo está lleva a login.php-->
+                <button class="botonJugar" onclick="cambiarDisplay(<?=$usuarioIniciado?>)"> Jugar </button>
         </div>
 
         <!-- Div para la selección de dificultad -->

@@ -1,5 +1,8 @@
 <?php
+
 session_start();
+require_once("../controladores/ControladorJugar.php");
+
 
 
 if (isset($_POST['submitOculto'])){

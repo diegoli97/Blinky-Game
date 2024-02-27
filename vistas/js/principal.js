@@ -10,3 +10,20 @@ function cambiarDisplay(usuarioIniciado) {
 function displayNone() {
   document.getElementById("selectorDificultad").style.display = "none";
 }
+
+//Comprueba que el usuario esté iniciado: Si lo está cierra la sesión al pulsar el botón.
+
+function displayBoton($usuarioIniciado) {
+  if ($usuarioIniciado) {
+    window.location.replace("vistas/logout.php");
+  } else {
+    alert("Sesión no iniciada");
+  }
+}
+
+//Comprueba que el usuario esté iniciado: Si lo está cierra muestra el nombre de usuario
+window.onload = function mostrarUsuario() {
+  if (botonDesplegado) {
+    document.getElementById("nombreUsuario").style.visibility = "visible";
+  }
+};

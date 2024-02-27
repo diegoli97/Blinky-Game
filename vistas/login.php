@@ -6,6 +6,7 @@ $mensaje="";
 
 session_start();
 
+
 if(isset($_POST['enviarLogin'])){
 //Comprueba si el usuario facilitado existe y si la contraseña es correcta
     $usuarioCorrecto = $login->get_loginCorrecto($_POST['nombreUsuario'],$_POST['passwordUsuario']);
@@ -15,7 +16,6 @@ if(isset($_POST['enviarLogin'])){
     if($usuarioCorrecto){
         $_SESSION['nombre'] = $_POST['nombreUsuario'];
         $_SESSION['password'] = $_POST['passwordUsuario'];
-        $_SESSION['sesionIniciada']="true";
         header('Location: ../index.php');
     }else{
         $mensaje= "Usuario o contraseña incorrectos";

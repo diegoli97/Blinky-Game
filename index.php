@@ -3,14 +3,16 @@ Buscar Usuarios, Ver Ranking y Borrar Usuario-->
 
 <?php
 
-$usuarioIniciado = "false";
+$usuarioIniciado = false;
+$nombreUsuario="";
 
 session_start();
 
 //Si el inicio de sesión ha sido exitoso el botón jugar ya no pedirá Login y además se mostrará un botón de cierre de sesión
-if(isset($_SESSION['sesionIniciada'])){
+if(isset($_SESSION['nombre'])){
     
-    $usuarioIniciado ="true";
+    $usuarioIniciado =true;
+    $nombreUsuario= $_SESSION['nombre'];
 
 }
 
@@ -26,23 +28,30 @@ if(isset($_SESSION['sesionIniciada'])){
         <link rel="stylesheet" href="/vistas/css/principal.css">
         <!-- Link para el icono de font awesome -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+        <script type="text/javascript">
+             var botonDesplegado = "<?php echo $usuarioIniciado; ?>";
+        </script>
         <script src="vistas/js/principal.js" defer></script>
     </head>
     <body>
         <div class="topnav">
 
+            <div><a href="/vistas/ranking.php"><button class="botonesMenu"> Ranking </button></a></div>
 
-            <div style="flex-grow: 1"><a href="/vistas/ranking.php"><button class="botonesMenu"> Ranking </button></a></div>
+            <div><a href="/vistas/verUsuarios.php"><button class="botonesMenu"> Ver Usuarios </button></a></div>
 
-            <div style="flex-grow: 1"><a href="/vistas/verUsuarios.php"><button class="botonesMenu"> Ver Usuarios </button></a></div>
-
-            <div class="search-container" style="flex-grow: 8">
+            <div class="search-container">
                 <form action="vistas/buscarUsuarios.php" method="get">
                     <input type="text" placeholder="Buscar Usuario" name="buscarUsuario">
                     <button type="submit" name='buscar'><i class="fa fa-search"></i></button>
                 </form>
             </div>
-
+            <div  id="botonCerrarSesion">
+                <button class="botonesMenu" onclick="displayBoton(<?=$usuarioIniciado?>)"> Cerrar Sesión </button>
+            </div>
+            <div>
+                <button id="nombreUsuario"><?=$nombreUsuario?></button>
+            </div>
 
         </div>
 

@@ -59,10 +59,9 @@ a {
   text-decoration: none;
   font-size: 20px;
   border-radius: 10px;
-  border-style: solid;
-  border-width: 5px;
-  border-color: #15561f;
   cursor: pointer;
+  font-weight: 500;
+  border: none;
 }
 
 .botonesMenu:hover {
@@ -84,7 +83,7 @@ Para el buscador de usuarios
 .topnav .search-container button {
   padding: 6px 10px;
   margin-top: 8px;
-  margin-right: 16px;
+  margin-right: 10vw;
   background: #ddd;
   font-size: 17px;
   border: none;
@@ -93,6 +92,20 @@ Para el buscador de usuarios
 
 .topnav .search-container button:hover {
   background: #ccc;
+}
+
+/*Nombre de usuario si la sesión está iniciada*/
+#nombreUsuario {
+  color: rgb(60, 165, 90);
+  background-color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 20px;
+  border-radius: 10px;
+  font-weight: bolder;
+  visibility: hidden;
+  border: none;
 }
 
 /*Selector de dificultad */

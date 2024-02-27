@@ -46,7 +46,7 @@ if(isset($_SESSION['nombre'])){
                     <button type="submit" name='buscar'><i class="fa fa-search"></i></button>
                 </form>
             </div>
-            <div  id="botonCerrarSesion">
+            <div >
                 <button class="botonesMenu" onclick="displayBoton(<?=$usuarioIniciado?>)"> Cerrar Sesión </button>
             </div>
             <div>

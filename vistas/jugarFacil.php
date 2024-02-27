@@ -4,14 +4,19 @@ session_start();
 require_once("../controladores/ControladorJugar.php");
 
 
-
+//Si el usuario tiene iniciada la sesión al darle al botón de enviar puntuación esta pasará al setter de ModeloJugar
 if (isset($_POST['submitOculto'])){
 
     $puntuacionMilisegundos = $_POST['puntuacionOculta'];
     $puntuacionImpresa = $_POST['puntuacionOcultaImpresa'];
 
+    $juego->set_puntuacion($puntuacionMilisegundos);
+
 }else{
-    $puntuacionImpresa = "00:00.000";
+
+        $puntuacionImpresa = "00:00.000";
+    
+    
 }
 
 
@@ -48,7 +53,7 @@ if (isset($_POST['submitOculto'])){
             <a href="/index.php"><button class="botonesFinal"><i class="fas fa-door-open puertaSalida"></i>Inicio</button></a>
             <button class="botonesFinal" onclick="window.location.reload()"><i class="fas fa-redo"></i></button>
         </div>
-        <!-- formulario oculto al que javascript mandará la puntuación para que php pueda recogerla -->
+        <!-- formulario oculto que aparece al terminar la partida al que javascript mandará la puntuación para que php pueda recogerla -->
         <div id="formularioOculto">
             <form action="jugarFacil.php" method="post">
                 <input type="hidden" name="puntuacionOculta" id="puntuacionOculta" value=""></input>

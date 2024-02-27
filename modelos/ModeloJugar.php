@@ -17,6 +17,7 @@ class ModeloJugar{
         if(!is_null($this->usuario)){
             $consulta = $this->db->query("SELECT Puntuacion FROM usuarios WHERE NombreUsuario="."'".$this->usuario."'");
             $this->puntuacion = $consulta->fetch_array()[0];
+            $consulta->free_result();
         }else{
             $this->puntuacion = 0;
         }
@@ -30,8 +31,21 @@ class ModeloJugar{
         
     }
 
-    //Actualiza la puntuación del jugador
+    //Actualiza la puntuación del jugador si es menor a la que ya tenía (con la excepción de 0)
     public function set_puntuacion($puntuacionObtenida){
+        
+        if(!is_null($this->usuario)){
+            
+            if($puntuacionObtenida<$this->puntuacion || $this->puntuacion ==0){
+                $query = "UPDATE usuarios 
+                SET Puntuacion =".$puntuacionObtenida." 
+                WHERE NombreUsuario ='".$this->usuario."';";
+                $this->db->query($query);
+                $this->db ->close();
+            }
+
+        }
+        
 
     }
 

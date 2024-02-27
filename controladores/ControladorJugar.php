@@ -11,5 +11,6 @@ if(isset($_SESSION['nombre'])){
     $usuarioJugando = null;
 }
 $juego = new ModeloJugar($usuarioJugando);
+$puntuacionActual = $juego->get_puntuacion();
 
 ?>

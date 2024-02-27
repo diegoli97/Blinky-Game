@@ -37,6 +37,9 @@ class ModeloLogin{
 
                 return true;
             }
+
+            $resultado->free_result();
+            $this->db ->close();
             
             return false;
         }     

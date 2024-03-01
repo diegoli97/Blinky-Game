@@ -16,6 +16,14 @@ class ModeloLogin{
     //Recoge el nombre indicado y lo busca entre todos los usuarios, si existe compara la contraseña dada
     public function get_loginCorrecto($usuario,$password){
 
+        $usuario = trim($usuario);
+        $password = trim($password);
+
+        if(is_null($usuario) || is_null($password)){
+            $this->db ->close();         
+            return false;
+        }else{
+
         $queryBuscarUsuario = "SELECT NombreUsuario FROM usuarios WHERE NombreUsuario="."'".$usuario."'";
         $resultado = $this->db->query($queryBuscarUsuario);
 
@@ -42,6 +50,8 @@ class ModeloLogin{
             $this->db ->close();
             
             return false;
+            }
+
         }     
 
     }

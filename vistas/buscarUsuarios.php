@@ -1,6 +1,7 @@
 <?php 
 
 require_once("../modelos/ModeloBuscarUsuarios.php");
+require_once("convertirTiempo.php");
 
 if (isset($_GET['buscar'])){
 
@@ -49,7 +50,7 @@ if (isset($_GET['buscarDentro'])){
                 <thead>
                 <tr>
                     <th>Nombre de usuario</th>
-                    <th>Opciones</th>
+                    <th>Puntuación</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -60,7 +61,7 @@ if (isset($_GET['buscarDentro'])){
                     foreach($usuariosEncontrados as $usuario){
                         echo "<tr>";
                         echo "<td>".$usuario['NombreUsuario']."</td>";
-                        echo "<td><button class='follow'>Seguir</button><button class='unfollow'>Dejar de seguir</button></td>";
+                        echo "<td>".parsearMilisegundos($usuario['Puntuacion'])."</td>";
                         echo "</tr>";
                     }
 

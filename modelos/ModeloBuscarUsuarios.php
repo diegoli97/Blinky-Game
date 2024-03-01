@@ -20,7 +20,7 @@ class ModeloBuscarUsuarios{
     //Recoge el nombre indicado y lo busca entre todos los usuarios, seleccionando también los que lo contengan
     public function get_usuariosEncontrados(){
 
-        $query = "SELECT NombreUsuario FROM usuarios WHERE NombreUsuario LIKE '".$this->usuarioBuscado."%'";
+        $query = "SELECT NombreUsuario, Puntuacion FROM usuarios WHERE NombreUsuario LIKE '".$this->usuarioBuscado."%'";
         $consulta = $this->db->query($query);
 
         while ($usuarios = $consulta->fetch_assoc()){

@@ -1,7 +1,12 @@
 <?php
-require_once("../controladores/ControladorRanking.php");
+require_once("../controladores/ControladorVerUsuarios.php");
 require_once("convertirTiempo.php");
 
+session_start();
+//Si el usuario no inicio sesión redirige a Login.php
+if(!isset($_SESSION['nombre'])){
+    header('Location: login.php');
+}
 ?>
 
 <!DOCTYPE html>
@@ -9,15 +14,15 @@ require_once("convertirTiempo.php");
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Ranking</title>
-        <link rel="stylesheet" href="../vistas/css/ranking.css">
+        <title>Puntuación</title>
+        <link rel="stylesheet" href="css/verPuntuacion.css">
         <!-- Link para los iconos de font awesome -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     </head>
     <body>
 
         <div class="divTitulo"> 
-            <h1> Ranking </h1>
+            <h1> Puntuación y posición </h1>
         </div>
         
 
@@ -32,22 +37,26 @@ require_once("convertirTiempo.php");
                 </tr>
                 </thead>
                 <tbody>
-
                 <?php 
 
                     $posicion=0;
-                    //Imprime los 10 usuarios conseguidos a través del query de ModeloRanking
-                    foreach($rankingUsuarios as $usuario){
+                    //Imprime el usuario conseguidos a través del query de ModeloRanking
+                    foreach($allUsuarios as $usuario){
                         $posicion++;
+                        
+                        if($usuario['NombreUsuario']==$_SESSION['nombre']){
+                            if($usuario['Puntuacion']==0){$posicion="No registrada";}
+                        
                         echo "<tr>";
                         echo "<td>".$posicion.".</td>";
                         echo "<td>".$usuario['NombreUsuario']."</td>";
                         echo "<td>".parsearMilisegundos($usuario['Puntuacion'])."</td>";
                         echo "</tr>";
+                        break;
+                    }
                     }
 
                 ?>
-
                 </tbody>
             </table>
 

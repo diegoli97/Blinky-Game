@@ -1,9 +1,10 @@
 //Variables del cronómetro impreso, el tiempo total en milisegundos y el número de aciertos (son necesarios 10)
-//Al ser modo fácil empieza el marcador con 5 segundos adicionales (5000 milisegundos)
+
 const cronometro = document.getElementById("timer");
 const botonCero = document.getElementById("boton0");
 const botonUno = document.getElementById("boton1");
-let tiempoAcumuladoMilisegundos = 5000;
+const botonDos = document.getElementById("boton2");
+let tiempoAcumuladoMilisegundos = 0;
 let numeroAciertos = 0;
 let botonAleatorio = 0;
 
@@ -17,16 +18,22 @@ function iniciarJuego() {
   intervaloContador = setInterval(sumarTiempo, 10);
 }
 
-//Genera un número aleatorio entre 0 y 1 para determinar que botón será el bueno y el malo
+//Genera un número aleatorio entre 0, 1 y 2 para determinar que botón será el bueno y cuales los malo
 function elegirBotonAleatorio() {
-  botonAleatorio = Math.floor(Math.random() * 2);
+  botonAleatorio = Math.floor(Math.random() * 3);
 
   if (botonAleatorio == 0) {
     botonCero.classList.replace(botonCero.className, "bueno");
     botonUno.classList.replace(botonUno.className, "malo");
-  } else {
+    botonDos.classList.replace(botonDos.className, "malo");
+  } else if (botonAleatorio == 1) {
     botonCero.classList.replace(botonCero.className, "malo");
     botonUno.classList.replace(botonUno.className, "bueno");
+    botonDos.classList.replace(botonDos.className, "malo");
+  } else {
+    botonCero.classList.replace(botonCero.className, "malo");
+    botonUno.classList.replace(botonUno.className, "malo");
+    botonDos.classList.replace(botonDos.className, "bueno");
   }
 }
 
@@ -67,6 +74,7 @@ function botonPresionado(id_boton) {
       clearInterval(intervaloContador);
       botonCero.classList.replace(botonCero.className, "neutra");
       botonUno.classList.replace(botonUno.className, "neutra");
+      botonDos.classList.replace(botonDos.className, "neutra");
       document.getElementById("puntuacionOculta").value =
         tiempoAcumuladoMilisegundos;
       document.getElementById("puntuacionOcultaImpresa").value =

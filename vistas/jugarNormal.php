@@ -14,7 +14,7 @@ if (isset($_POST['submitOculto'])){
 
 }else{
 
-        $puntuacionImpresa = "00:05.000";
+        $puntuacionImpresa = "00:00.000";
     
     
 }
@@ -28,12 +28,12 @@ if (isset($_POST['submitOculto'])){
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Juego fácil</title>
+        <title>Juego normal</title>
         <link rel="stylesheet" href="css/jugar.css">
         <!-- Link para los iconos de font awesome -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
         <!-- Link para el archivo de Javascript, defer para cargarlo después de que cargue la página-->
-        <script src="js/jugarFacil.js" defer></script>
+        <script src="js/jugarNormal.js" defer></script>
     </head>
     <body>
 
@@ -47,6 +47,7 @@ if (isset($_POST['submitOculto'])){
         <div class="zonaJuego" id="divZonaJuego">
             <button class="neutra" id="boton0" onclick="botonPresionado(this.id)"></button>
             <button class="neutra" id="boton1" onclick="botonPresionado(this.id)"></button>
+            <button class="neutra" id="boton2" onclick="botonPresionado(this.id)"></button>
         </div>    
 
         <div class="divBotones">

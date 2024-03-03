@@ -1,13 +1,3 @@
-<?php
-require_once("../controladores/ControladorVerUsuarios.php");
-require_once("convertirTiempo.php");
-
-session_start();
-//Si el usuario no inicio sesión redirige a Login.php
-if(!isset($_SESSION['nombre'])){
-    header('Location: login.php');
-}
-?>
 
 <!DOCTYPE html>
 <html lang="es">
@@ -15,7 +5,7 @@ if(!isset($_SESSION['nombre'])){
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Puntuación</title>
-        <link rel="stylesheet" href="css/verPuntuacion.css">
+        <link rel="stylesheet" href="../vistas/css/verPuntuacion.css">
         <!-- Link para los iconos de font awesome -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     </head>

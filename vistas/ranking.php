@@ -1,8 +1,3 @@
-<?php
-require_once("../controladores/ControladorRanking.php");
-require_once("convertirTiempo.php");
-
-?>
 
 <!DOCTYPE html>
 <html lang="es">

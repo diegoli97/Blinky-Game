@@ -31,7 +31,7 @@ class ModeloJugar{
         
     }
 
-    //Actualiza la puntuación del jugador si es menor a la que ya tenía (con la excepción de 0)
+    //Actualiza la puntuación del jugador si es menor a la que ya tenía (con la excepción de 0, que es con la que se empieza)
     public function set_puntuacion($puntuacionObtenida){
         
         if(!is_null($this->usuario)){
@@ -48,7 +48,6 @@ class ModeloJugar{
         
 
     }
-
 
 
 }

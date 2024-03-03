@@ -56,7 +56,7 @@ function imprimirTiempo(milisegundos) {
   return tiempo;
 }
 
-//Funcion para que cuando acierte 10 se acaba la partida, si falla suma 1.500 segundos
+//Funcion para que cuando acierte 10 se acabe la partida, si falla suma 1.500 segundos
 
 function botonPresionado(id_boton) {
   let botonClickado = document.getElementById(id_boton);

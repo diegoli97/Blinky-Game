@@ -3,7 +3,7 @@ function cambiarDisplay(usuarioIniciado) {
   if (usuarioIniciado) {
     document.getElementById("selectorDificultad").style.display = "flex";
   } else {
-    window.location.replace("vistas/login.php");
+    window.location.replace("controladores/ControladorLogin.php");
   }
 }
 
@@ -17,7 +17,7 @@ function displayBoton($usuarioIniciado) {
   if ($usuarioIniciado) {
     window.location.replace("vistas/logout.php");
   } else {
-    window.location.replace("vistas/login.php");
+    window.location.replace("controladores/ControladorLogin.php");
   }
 }
 
@@ -34,6 +34,6 @@ window.onload = function mostrarUsuario() {
 //Si el usuario no está iniciado habilita el botón para que lleve a la página de registro
 function irRegistro($usuarioIniciado) {
   if (!$usuarioIniciado) {
-    window.location.href = "vistas/registro.php";
+    window.location.href = "../controladores/ControladorRegistro.php";
   }
 }

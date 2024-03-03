@@ -36,12 +36,12 @@ if(isset($_SESSION['nombre'])){
     <body>
         <div class="topnav">
 
-            <div><a href="/vistas/ranking.php"><button class="botonesMenu"> Ranking </button></a></div>
+            <div><a href="../controladores/ControladorRanking.php"><button class="botonesMenu"> Ranking </button></a></div>
 
-            <div><a href="/vistas/verPuntuacion.php"><button class="botonesMenu"> Ver puntuación </button></a></div>
+            <div><a href="../controladores/ControladorVerPuntuacion.php"><button class="botonesMenu"> Ver puntuación </button></a></div>
 
             <div class="search-container">
-                <form action="vistas/buscarUsuarios.php" method="get">
+                <form action="controladores/ControladorBuscarUsuarios.php" method="get">
                     <input type="text" placeholder="Buscar Usuario" name="buscarUsuario">
                     <button type="submit" name='buscar'><i class="fa fa-search"></i></button>
                 </form>

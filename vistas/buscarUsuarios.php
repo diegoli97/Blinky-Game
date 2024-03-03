@@ -1,29 +1,4 @@
-<?php 
 
-require_once("../modelos/ModeloBuscarUsuarios.php");
-require_once("convertirTiempo.php");
-
-if (isset($_GET['buscar'])){
-
-    $nombreBuscado = $_GET['buscarUsuario'];
-
-    $usuario = new ModeloBuscarUsuarios($nombreBuscado);
-
-    $usuariosEncontrados = $usuario->get_usuariosEncontrados();
-
-}
-
-if (isset($_GET['buscarDentro'])){
-
-    $nombreBuscado = $_GET['buscarUsuarioDentro'];
-    $usuario = new ModeloBuscarUsuarios($nombreBuscado);
-
-    $usuariosEncontrados = $usuario->get_usuariosEncontrados();
-
-
-}
-
-?>
 
 <!DOCTYPE html>
 <html lang="es">
@@ -31,7 +6,7 @@ if (isset($_GET['buscarDentro'])){
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Búsqueda de usuario</title>
-        <link rel="stylesheet" href="css/buscarUsuarios.css">
+        <link rel="stylesheet" href="../vistas/css/buscarUsuarios.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     </head>
     <body>

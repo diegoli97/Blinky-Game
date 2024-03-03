@@ -7,9 +7,9 @@ $mensaje="";
 
 session_start();
 
-
-if(isset($_POST['enviarLogin'])){
 //Comprueba si el usuario facilitado existe y si la contraseña es correcta
+if(isset($_POST['enviarLogin'])){
+
     $usuarioCorrecto = $login->get_loginCorrecto($_POST['nombreUsuario'],$_POST['passwordUsuario']);
 
     echo $usuarioCorrecto;

@@ -31,7 +31,7 @@ if (isset($_POST['submitOculto'])){
         <title>Juego fácil</title>
         <link rel="stylesheet" href="css/jugar.css">
         <!-- Link para los iconos de font awesome -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
         <!-- Link para el archivo de Javascript, defer para cargarlo después de que cargue la página-->
         <script src="js/jugarFacil.js" defer></script>
     </head>

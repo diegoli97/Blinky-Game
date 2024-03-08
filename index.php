@@ -16,7 +16,6 @@ if(isset($_SESSION['nombre'])){
 
 }
 
-
 ?>
 
 <!DOCTYPE html>

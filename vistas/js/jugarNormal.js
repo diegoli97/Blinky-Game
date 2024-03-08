@@ -64,22 +64,15 @@ function imprimirTiempo(milisegundos) {
 }
 
 //Funcion para que cuando acierte 10 se acabe la partida, si falla suma 1.500 segundos
+let botonClickado = null;
 
 function botonPresionado(id_boton) {
-  let botonClickado = document.getElementById(id_boton);
+  botonClickado = document.getElementById(id_boton);
 
   if (botonClickado.className == "bueno") {
     numeroAciertos++;
     if (numeroAciertos == 10) {
-      clearInterval(intervaloContador);
-      botonCero.classList.replace(botonCero.className, "neutra");
-      botonUno.classList.replace(botonUno.className, "neutra");
-      botonDos.classList.replace(botonDos.className, "neutra");
-      document.getElementById("puntuacionOculta").value =
-        tiempoAcumuladoMilisegundos;
-      document.getElementById("puntuacionOcultaImpresa").value =
-        cronometro.innerHTML;
-      document.getElementById("formularioOculto").style.display = "flex";
+      pararPartida();
       return;
     }
     elegirBotonAleatorio();
@@ -87,4 +80,26 @@ function botonPresionado(id_boton) {
     tiempoAcumuladoMilisegundos += 1500;
     elegirBotonAleatorio();
   }
+}
+
+//Para el juego a los 2 minutos
+if (tiempoAcumuladoMilisegundos > 120000) {
+  pararPartida();
+}
+
+//Para el contador y deshabilita los botones
+function pararPartida() {
+  clearInterval(intervaloContador);
+  botonCero.classList.replace(botonCero.className, "neutra");
+  botonUno.classList.replace(botonUno.className, "neutra");
+  botonDos.classList.replace(botonDos.className, "neutra");
+  botonCero.disabled = true;
+  botonUno.disabled = true;
+  botonDos.disabled = true;
+  document.getElementById("puntuacionOculta").value =
+    tiempoAcumuladoMilisegundos;
+  document.getElementById("puntuacionOcultaImpresa").value =
+    cronometro.innerHTML;
+  document.getElementById("formularioOculto").style.display = "flex";
+  return;
 }
